@@ -1,0 +1,196 @@
+/* ⚽ Tema Gemini + Futebol */
+
+:root {
+    --color-background: #0a0d12;
+    --color-chat-bg: #ffffff;
+    --color-ai-bubble: #e3f2fd;
+    --color-user-bubble: #f1f8e9;
+    --color-text-dark: #212121;
+    --color-input-bg: #f5f5f5;
+    --color-send-button: #1b5e20;
+    --color-border: #c8e6c9;
+}
+
+/* 🏟️ Fundo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    background-image: url('/static/img/estadio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* 🧩 Container */
+.chat-container {
+    width: 95%;
+    max-width: 900px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--color-chat-bg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎯 Cabeçalho */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    background-image: url('/static/img/gramado.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.chat-header h1 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--color-text-dark);
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.ai-icon {
+    width: 40px;
+    height: 40px;
+    background-image: url('/static/img/bola.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 💬 Mensagens */
+.chat-box {
+    flex-grow: 1;
+    padding: 20px 80px 100px 80px;
+    overflow-y: auto;
+    background-image: url('/static/img/campo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    opacity: 0.97;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: flex-start;
+    padding-top: 5px;
+}
+
+.ai-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-image: url('/static/img/tecnico.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--color-send-button);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 20px;
+    background-image: url('/static/img/jogador.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fdd835;
+}
+
+.incoming {
+    justify-content: flex-start;
+}
+
+.incoming p {
+    background-color: var(--color-ai-bubble);
+    border-radius: 16px 16px 16px 0;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+.outgoing {
+    justify-content: flex-end;
+}
+
+.outgoing p {
+    background-color: var(--color-user-bubble);
+    border-radius: 16px 16px 0 16px;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+.message-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+}
+
+/* ⚽ Input */
+.chat-input-area {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 160px);
+    max-width: 740px;
+    padding: 8px;
+    background-color: var(--color-input-bg);
+    border-radius: 40px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    padding: 12px 16px;
+    font-size: 1rem;
+    outline: none;
+    color: var(--color-text-dark);
+}
+
+.chat-input-area button {
+    background-color: var(--color-send-button);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url('/static/img/bola.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.chat-input-area button:hover {
+    background-color: #2e7d32;
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* Animação ⚽ */
+.loading::after {
+    content: '⚽';
+    animation: bounce 0.8s infinite;
+    display: inline-block;
+    color: var(--color-send-button);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ Gênio do Futebol - Chatbot Feito Por Enzo Fazio e Pedro Henrique</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="ai-icon"></div>
+            <h1>Gênio do Futebol</h1>
+        </header>
+        
+        <div class="chat-box" id="chat-box">
+            <div class="message incoming">
+                <div class="avatar ai-avatar"></div>
+                <div class="message-content">
+                    <p>Olá! Sou o Gênio do Futebol. Pronto para conversar sobre o esporte mais lindo do mundo?</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chat-form">
+            <input type="text" id="user-input" placeholder="Pergunte sobre estatísticas, história e curiosidades..." required>
+            <button> type="submit" id="send-button"></button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
